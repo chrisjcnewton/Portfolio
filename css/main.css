@@ -1,0 +1,146 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+body{
+/*font-size: 100px;*/
+	/*font-size:1.1em;*/
+	color:#a7a9ac;
+	font-family:'Rosarivo', serif;
+	line-height:1.4em;
+	background-color:#eeeeee;
+}
+
+a{
+	text-decoration: none;
+	color:#a7a9ac;
+}
+
+a:hover{
+	color:gray;
+}
+
+#header{
+	width:100%;
+	height:9em;	
+	text-align:right;	
+}
+
+#title{
+	padding: 1em 0 0 0;
+	font-size:3em;
+	color:#a9a9a9;
+	padding-right:0.5em;
+}
+
+#subtitle{
+	padding: 1em 1.5em 0 0;
+}
+
+.section{
+	width:100%;
+	
+}
+
+.bgImage{
+	width:100%;
+	
+}
+
+.content{
+	/*position:relative;*/
+	/*height:20em;*/
+	
+}
+
+.contentMinor{
+	float:left;
+	width:45%;
+}
+.contentMinor img{
+	padding:3em;
+	width:80%;	
+}
+
+.projectTitle{
+	font-size:1.5em;
+	padding: 1.5em 1.5em 0.1em 50%;
+}
+
+.text{	
+	padding: 1.5em 1.5em 1.5em 50%;
+}
+
+.textMinor{
+	text-align: right;
+	padding-right:2em;
+}
+
+.divider{
+	float:left;
+	margin-top:2.5em;	
+	height:15em;
+	border-right: 2px #a7a9ac solid;
+	
+}
+
+.seperator{
+	font-size: 3em;
+	margin:0.1em 0 0.8em 0;
+	text-align: center;
+
+	
+	
+}
+
+
+/*@media all and (min-width: 7em) and (max-width: 1000px){*/
+@media all and (min-width: 1000px){
+	.section, #header{
+		width:1000px;
+		margin:0 auto;
+		/*background-color: green;*/
+	}
+}
+
+@media all and (max-width: 767px){
+	
+	#header{
+		padding:0 0 2em 0;
+	}
+	
+	#title{
+		font-size:2.6em;
+		line-height: 1em;
+		padding-right:0.2em;
+	}
+	
+	#subtitle{
+		padding-right:0.4em;
+		
+	}
+	
+	.contentMinor{
+		float:none;	
+		width:100%;	
+	}
+	.contentMinor img{
+		/*
+		padding: 1em 0 0 1em;			
+		width:90%;*/
+		display:none;		
+	}
+	.projectTitle{
+		font-size:1.5em;
+		padding: 1em 0 0.1em 0.7em;
+	}
+	.text{			
+		padding: 1em;		
+	}	
+	.textMinor{
+		display:none;
+		padding:1em;
+	}	
+	.divider{
+		display:none;		
+	}
+}
