@@ -5,7 +5,7 @@ body{
 /*font-size: 100px;*/
 	/*font-size:1.1em;*/
 	color:#a7a9ac;
-	font-family:"Open Sans";
+	font-family:"Open Sans" sans-serif;
 	line-height:1.4em;
 	background-color:#eeeeee;
 }
@@ -29,7 +29,16 @@ a:hover{
 	padding: 1em 0 0 0;
 	font-size:3em;
 	color:#a9a9a9;
+	font-family:"Pacifico";
+	
 	padding-right:0.5em;
+}
+
+.logoText{
+	font-family:"Pacifico";
+	text-align: right;
+	font-size: 2.5em;
+	padding: 1em;
 }
 
 #subtitle{
@@ -64,6 +73,7 @@ a:hover{
 .projectTitle{
 	font-size:1.5em;
 	padding: 1.5em 1.5em 0.1em 50%;
+	font-weight:bold;
 }
 
 .text{	
