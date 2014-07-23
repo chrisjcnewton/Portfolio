@@ -37,8 +37,9 @@ a:hover{
 .logoText{
 	font-family:"Pacifico";
 	text-align: right;
-	font-size: 2.5em;
+	font-size: 3.3em;
 	padding: 1em;
+	line-height: 0.95em;
 }
 
 #subtitle{
@@ -47,7 +48,7 @@ a:hover{
 
 .section{
 	width:100%;
-	
+	box-shadow: 0 0 1em rgba(0,0,0,0.2);
 }
 
 .bgImage{
@@ -56,9 +57,9 @@ a:hover{
 }
 
 .content{
-	/*position:relative;*/
-	/*height:20em;*/
-	
+	margin-bottom: 3em;
+	padding-bottom: 2em;
+	min-height:23em;
 }
 
 .contentMinor{
@@ -74,6 +75,7 @@ a:hover{
 	font-size:1.5em;
 	padding: 1.5em 1.5em 0.1em 50%;
 	font-weight:bold;
+	/*font-style: italic;*/
 }
 
 .text{	
@@ -83,6 +85,9 @@ a:hover{
 .textMinor{
 	text-align: right;
 	padding-right:2em;
+}
+.textMinor span{
+	font-weight:bold;
 }
 
 .divider{
@@ -138,6 +143,10 @@ a:hover{
 		padding: 1em 0 0 1em;			
 		width:90%;*/
 		display:none;		
+	}
+	
+	.logoText{
+		display:none;
 	}
 	.projectTitle{
 		font-size:1.5em;
