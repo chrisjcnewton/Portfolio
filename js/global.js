@@ -2,11 +2,22 @@
 	
 	
 	var scroller;
+	var isMobile = navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile/i) != null;
 	
-	window.onload = function(){		
+	window.onload = function(){	
 		var pageContents = document.getElementById('pageContents');
-		scroller = new CustomScroll(pageContents, {ease:true, thumbClass:'scrollbar-thumb', trackClass:'scrollbar-track'});
-		scroller.onScroll(onScrolling);
+		
+		if(isMobile){
+			var panels = document.querySelectorAll('.panel');								
+			for(var i=0; i< panels.length; i++){
+				panels[i].style.opacity = '1';							
+				panels[i].style.transform = 'translateY(-20px)';
+			}
+			pageContents.style.paddingRight = "0px";
+		}else{	
+			scroller = new CustomScroll(pageContents, {ease:true, thumbClass:'scrollbar-thumb', trackClass:'scrollbar-track'});
+			scroller.onScroll(onScrolling);
+		}
 	};
 	
 	function onScrolling(scrollup){
@@ -35,6 +46,7 @@
 	
 		
 	window.onresize = function(){				
+		if(isMobile)return;	
 		scroller.update(browserHeight());											
 	};
 		
