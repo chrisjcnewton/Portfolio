@@ -8,7 +8,39 @@ body{
 	font-family:"Open Sans" sans-serif;
 	line-height:1.4em;
 	background-color:#eeeeee;
+	overflow: hidden;
 }
+
+			
+			.panel{
+				opacity:0;
+				transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+				transform: translateY(0px);
+			}
+			.panel.first{
+				opacity:1;				
+				transform: translateY(-10px);
+			}
+			
+			.scrollbar-track {
+			    position:absolute;
+			    top:0;
+			    right:0;
+			    bottom:0px;
+			    width:10px;			    
+			    background-color: #a7a9ac;
+			    border-radius: 10px;
+			}
+			.scrollbar-thumb {
+			    cursor:pointer;
+			    position:absolute;
+			    top:0;
+			    left:0px;
+			    width:10px;			    
+			    background-color:#549AD3;
+			    border-radius: 10px;
+			}
+			
 
 a{
 	text-decoration: none;
@@ -64,7 +96,7 @@ a:hover{
 
 .contentMinor{
 	float:left;
-	width:45%;
+	width:30%;
 }
 .contentMinor img{
 	padding:3em;
@@ -73,13 +105,13 @@ a:hover{
 
 .projectTitle{
 	font-size:1.5em;
-	padding: 1.5em 1.5em 0.1em 50%;
+	padding: 1.5em 1.5em 0.1em 33%;
 	font-weight:bold;
 	/*font-style: italic;*/
 }
 
 .text{	
-	padding: 1.5em 1.5em 1.5em 50%;
+	padding: 1.5em 1.5em 1.5em 33%;
 }
 
 .textMinor{
@@ -95,7 +127,7 @@ a:hover{
 	margin-top:2.5em;	
 	height:15em;
 	border-right: 2px #a7a9ac solid;
-	
+	padding-left:0.5em;
 }
 
 .seperator{
@@ -139,14 +171,13 @@ a:hover{
 		width:100%;	
 	}
 	.contentMinor img{
-		/*
-		padding: 1em 0 0 1em;			
-		width:90%;*/
-		display:none;		
+		padding:1em;
+		width:40%;
+		/*display:none;*/		
 	}
 	
 	.logoText{
-		display:none;
+		/*display:none;*/
 	}
 	.projectTitle{
 		font-size:1.5em;
@@ -156,7 +187,7 @@ a:hover{
 		padding: 1em;		
 	}	
 	.textMinor{
-		display:none;
+		/*display:none;*/
 		padding:1em;
 	}	
 	.divider{
