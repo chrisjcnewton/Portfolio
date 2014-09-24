@@ -14,37 +14,37 @@ body{
 
 }
 
-			#pageContents{
-				padding-right:10px;
-			}
-			.panel{
-				opacity:0;
-				transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
-				transform: translateY(0px);
-			}
-			.panel.first{
-				opacity:1;				
-				transform: translateY(-10px);
-			}
-			
-			.scrollbar-track {
-			    position:absolute;
-			    top:0;
-			    right:0;
-			    bottom:0px;
-			    width:10px;			    
-			    background-color: #a7a9ac;
-			    border-radius: 10px;
-			}
-			.scrollbar-thumb {
-			    cursor:pointer;
-			    position:absolute;
-			    top:0;
-			    left:0px;
-			    width:10px;			    
-			    background-color:#549AD3;
-			    border-radius: 10px;
-			}
+#pageContents{
+	padding-right:10px;
+}
+.panel{
+	opacity:0;
+	transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+	transform: translateY(0px);
+}
+.panel.first{
+	opacity:1;				
+	transform: translateY(-10px);
+}
+
+.scrollbar-track {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0px;
+    width:10px;			    
+    background-color: #a7a9ac;
+    border-radius: 10px;
+}
+.scrollbar-thumb {
+    cursor:pointer;
+    position:absolute;
+    top:0;
+    left:0px;
+    width:10px;			    
+    background-color:#549AD3;
+    border-radius: 10px;
+}
 			
 
 a{
@@ -72,7 +72,36 @@ a:hover{
 	
 	padding-right:0.5em;
 }
+.cta{
+	cursor: pointer;
+	background: #549AD3;
+	border-radius: 0.9em;
+	padding: 0.3em 1em;
+	float: right;
+	color: #eeeeee;
+	margin: 0.5em 0;
+}
 
+.video{
+	position:fixed;
+	padding: 17px;
+	background: #eeeeee;
+	border-radius: 7px;
+	box-shadow: 0 0 5em rgba(0,0,0,0.5);
+	opacity:0;
+	transition: opacity 1s ease-in-out;
+}
+
+.videoBg{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.8);
+	opacity:0;
+	transition: opacity 0.5s ease-in-out;
+}
 
 .logoText{
 	font-family:"Pacifico";
@@ -156,16 +185,26 @@ a:hover{
 	.section, #header{
 		width:1000px;
 		margin:0 auto 1.2em auto;
-		/*background-color: green;*/
 	}
+		
+	
 }
 
-@media all and (max-width: 768px){
-	.section{		
-		box-shadow: none;
+@media screen and (max-width: 999px){
+	.section, .bgImage{				
+		border-radius: initial;
 	}
+	.video{
+		width:100%;	
+		left:0;	
+		padding: 0;
+		background: #eeeeee;		
+	}
+	
 }
-@media all and (max-width: 767px){
+
+
+@media all and (max-width: 750px){
 	
 	#header{
 		padding:0 0 2em 0;
@@ -174,15 +213,17 @@ a:hover{
 	#title{
 		font-size:2.6em;
 		line-height: 1em;
-		padding-right:0.2em;
+		padding-right:0.4em;
 	}
 	
 	#subtitle{
-		padding-right:0.4em;
+		padding-right:0.9em;
 		
 	}
-	
-	
+	/*
+	.section, .bgImage{				
+		border-radius: initial;
+	}*/
 	
 	.contentMinor{
 		float:none;	
@@ -198,16 +239,28 @@ a:hover{
 		display:none;
 	}
 	.projectTitle{
-		font-size:1.5em;
-		padding: 1em 0 0.1em 0.7em;
+		font-size:1.2em;
+		padding: 1em 0.7em 0.1em 0.7em;
+		text-align:right;
+		
 	}
 	.text{			
-		padding: 1em;		
+		padding: 1em;
+		clear:both;		
 	}	
+	
+	.textMinortext{
+		display:none;
+	}
+		
 	.textMinor{
-		/*display:none;*/
-		text-align:left;
+		/*
+		text-align:right;
 		padding:1em;
+		font-size: 0.8em;
+		line-height: 1.5em;
+		*/
+		/*background: rgba(128,128,128,0.1);*/
 	}	
 	.divider{
 		display:none;		
