@@ -16,7 +16,7 @@ var CustomScroll = CustomScroll || function(domElem, options){
 		
 		
 		domElemHeight = window.innerHeight;//domElem.offsetHeight;
-		console.log('domElemHeight = '+domElemHeight);
+		//console.log('domElemHeight = '+domElemHeight);
 		
 		
 		parentElem = domElem.parentNode;
@@ -199,11 +199,12 @@ var CustomScroll = CustomScroll || function(domElem, options){
 		}else{			
 			scrollTrack.style.visibility = 'visible';			
 		}
-		
+		/*
 		console.log('height = '+height);
 		console.log('cntHeight = '+cntHeight);
 		console.log('trcHeight = '+trcHeight);
 		console.log('thumb height = '+newThumbHeight);
+		*/
 	}
 	
 	function onScroll (e) {
