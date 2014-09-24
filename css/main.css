@@ -49,12 +49,12 @@ body{
 
 a{
 	text-decoration: none;
-	color:#a7a9ac;
+	color:#eeeeee;
 }
-
+/*
 a:hover{
 	color:gray;
-}
+}*/
 
 #header{
 	width:100%;
@@ -79,7 +79,7 @@ a:hover{
 	padding: 0.3em 1em;
 	float: right;
 	color: #eeeeee;
-	margin: 0.5em 0;
+	margin: 0.9em 0;
 }
 
 .video{

@@ -44,8 +44,9 @@
 		};
 		
 		var vidIframe = document.createElement('iframe');
-		vidIframe.src = e.target.dataset.url;
+		vidIframe.src = e.target.dataset.url + "?rel=0";
 		vidIframe.width = "60%";
+		
 		vidIframe.frameborder = "0";
 		vidIframe.allowFullScreen = "true";
 		//vidIframe.style.visibility = "hidden";
