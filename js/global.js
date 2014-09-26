@@ -16,6 +16,7 @@
 			for(var i=0; i< panels.length; i++){
 				panels[i].style.opacity = '1';							
 				panels[i].style.transform = 'translateY(-20px)';
+				panels[i].style["-webkit-transform"] = 'translateY(-20px)';
 			}
 			pageContents.style.paddingRight = "0px";
 		}else{	
@@ -85,6 +86,7 @@
 					
 					panels[i].style.opacity = '0';							
 					panels[i].style.transform = 'translateY(0px)';							
+					panels[i].style["-webkit-transform"] = 'translateY(0px)';							
 					//console.log("UP");							
 				}						
 			}else{						
@@ -92,6 +94,7 @@
 					//console.log("topOfPanel = "+topOfPanel);							
 					panels[i].style.opacity = '1';							
 					panels[i].style.transform = 'translateY(-20px)';							
+					panels[i].style["-webkit-transform"] = 'translateY(-20px)';							
 				}
 			}					
 		}
