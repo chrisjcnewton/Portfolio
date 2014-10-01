@@ -30,7 +30,18 @@
 			
 		}
 		
-	};
+		var hamburgerMenu = document.querySelector(".hamburger-menu");
+		hamburgerMenu.addEventListener('click', onMenuClicked,false);
+	}
+	
+	function onMenuClicked(){
+		var projects = document.querySelector("#projects");
+		projects.style.transform = "translateZ(-500px)";
+		projects.style['-webkit-filter'] = "blur(5px)";
+		
+		var menuContent = document.querySelector("#menuContent");
+		menuContent.style.transform = "translate3d(0,0,0)";
+	}
 	
 	function onPlayClicked(e){
 		var vidBG = document.createElement('div');
