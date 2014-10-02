@@ -1,14 +1,16 @@
 (function(){
 	
 	
-	var scroller, vidIframe = null;
+	var scroller,clickEvent, vidIframe = null;
 	var isMobile = navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile/i) != null;
+	
 	
 	window.addEventListener('load', init, false);
 	window.addEventListener('resize', onResize, false);
 	
 	
 	function init(){	
+		clickEvent = isMobile? 'touchend':'click';
 		var pageContents = document.getElementById('pageContents');
 		
 		if(isMobile){
@@ -19,6 +21,8 @@
 				panels[i].style["-webkit-transform"] = 'translateY(-20px)';
 			}
 			pageContents.style.paddingRight = "0px";
+			/*pageContents.style.overflow = "scroll";
+			pageContents.style['-webkit-overflow-scrolling'] = "touch";*/
 		}else{	
 			scroller = new CustomScroll(pageContents, {ease:true, thumbClass:'scrollbar-thumb', trackClass:'scrollbar-track'});
 			scroller.onScroll(onScrolling);
@@ -26,21 +30,28 @@
 		
 		var videos = document.querySelectorAll('.playvideo');
 		for(var i=0; i< videos.length; i++){
-			videos[i].addEventListener('click', onPlayClicked, false);			
-			
+			videos[i].addEventListener(clickEvent, onPlayClicked, false);						
 		}
 		
 		var hamburgerMenu = document.querySelector(".hamburger-menu");
-		hamburgerMenu.addEventListener('click', onMenuClicked,false);
+		hamburgerMenu.addEventListener(clickEvent, onMenuClicked,false);
 	}
 	
 	function onMenuClicked(){
 		var projects = document.querySelector("#projects");
-		projects.style.transform = "translateZ(-500px)";
-		projects.style['-webkit-filter'] = "blur(5px)";
+		projects.style.transform = "translate3d(0px,0,-200px)";
+		projects.style['-webkit-transform'] = "translate3d(0px,0,-200px)";
+		//projects.style['-webkit-filter'] = "blur(2px)";
 		
-		var menuContent = document.querySelector("#menuContent");
+		var menuContent = document.querySelector("#menu");
 		menuContent.style.transform = "translate3d(0,0,0)";
+		menuContent.style['-webkit-transform'] = "translate3d(0px,0,0)";
+		
+		var darkBG = document.createElement('div');		
+		darkBG.setAttribute('class','videoBg');	
+		document.body.insertBefore(darkBG,projects);		
+		setTimeout(function(){darkBG.style.opacity = "1";},100);	
+		
 	}
 	
 	function onPlayClicked(e){
@@ -79,7 +90,7 @@
 			
 		};
 		
-		vidBG.addEventListener('click',function(){
+		vidBG.addEventListener(clickEvent,function(){
 			document.body.removeChild(vidBG);
 			vidIframe.src = null;
 			vidIframe = null;
