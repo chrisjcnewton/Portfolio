@@ -252,6 +252,10 @@ a:hover{
 	padding: 1.5em 1.5em 1.5em 33%;
 }
 
+.text a{
+	color:#549AD3;
+}
+
 .textMinor{
 	text-align: right;
 	padding:0em 1em;
