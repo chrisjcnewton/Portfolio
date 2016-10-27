@@ -38,6 +38,8 @@
 
 		var closeMenu = document.querySelector('.close-menu');
 		closeMenu.addEventListener(clickEvent, onCloseClicked, false);
+
+		onResize()
 	}
 
 	function onMenuClicked() {
@@ -82,7 +84,7 @@
 	function onPlayClicked(e) {
 		var vidBG = document.createElement('div');
 
-		vidBG.setAttribute('class', 'videoBg');
+		vidBG.classList.add('videoBg');
 		document.body.appendChild(vidBG);
 
 		var loader = document.createElement('img');

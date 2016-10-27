@@ -51,6 +51,7 @@ body{
 	/*transition:-webkit-transform 0.5s ease-in-out;*/
 	z-index:2;
 	/*border: 1px red solid;*/
+	/
 }
 
 
@@ -96,8 +97,8 @@ body{
 #projects{
 
 
-	transform: translate3d(0,0,0.1px);
-	-webkit-transform: translate3d(0,0,0.1px);
+	/*transform: translate3d(0,0,0.1px);
+	-webkit-transform: translate3d(0,0,0.1px);*/
 	/*-webkit-filter:blur(0px);*/
 	transition:all 0.5s ease-in-out;
 	/*transition:-webkit-transform 0.5s ease-in-out;*/
@@ -199,8 +200,9 @@ a:hover{
 	opacity:0;
 	transition: opacity 0.3s ease-in-out;
 	-webkit-transition: opacity 0.3s ease-in-out;
-	transform: translateZ(0);
-	-webkit-transform: translateZ(0);
+	/*transform: translateZ(0.1px);
+	-webkit-transform: translateZ(0.1px);*/
+	
 	z-index: 1;
 }
 
