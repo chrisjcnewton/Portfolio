@@ -45,14 +45,17 @@ body{
 	left:0;
 	width:100%;
 	height:100%;
-
-	transform:translate3d(-1500px,0,0);
-	-webkit-transform:translate3d(-1500px,0,0);
-
+	transform:translate3d(-3500px,0,0);
+	-webkit-transform:translate3d(-3500px,0,0);
 	transition:all 0.5s ease-in-out;
 	/*transition:-webkit-transform 0.5s ease-in-out;*/
-
 	z-index:2;
+	/*border: 1px red solid;*/
+}
+
+
+#menu.no-anim{
+	transition: none;
 }
 
 #menuContent{
@@ -64,9 +67,8 @@ body{
     padding-top:3em;
     /*box-shadow: 0 0 1em rgba(0,0,0,0.2);
 	border-radius: 45px;*/
-
-
 }
+
 
 #aboutSection{
 	text-align: center;

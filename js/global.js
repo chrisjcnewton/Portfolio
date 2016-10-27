@@ -46,7 +46,8 @@
 		projects.style['-webkit-transform'] = 'translate3d(0px,0,-200px)';
 		//projects.style['-webkit-filter'] = "blur(2px)";
 
-		var menuContent = document.querySelector('#menu');
+		var menuContent = document.querySelector('#menu');		
+		menuContent.classList.remove('no-anim');		
 		menuContent.style.transform = 'translate3d(0,0,0)';
 		menuContent.style['-webkit-transform'] = 'translate3d(0px,0,0)';
 
@@ -64,8 +65,9 @@
 		//projects.style['-webkit-filter'] = "blur(2px)";
 
 		var menuContent = document.querySelector('#menu');
-		menuContent.style.transform = 'translate3d(-1500px,0,0)';
-		menuContent.style['-webkit-transform'] = 'translate3d(-1500px,0,0)';
+		menuContent.style.transform = 'translate3d(-'+window.innerWidth+'px,0,0)';
+		menuContent.style['-webkit-transform'] = 'translate3d(-'+window.innerWidth+'px,0,0)';
+		
 
 		var darkBG = document.querySelector('.videoBg');
 
@@ -154,6 +156,11 @@
 			vidIframe.style.top = (window.innerHeight * 0.5 - vidIframe.offsetHeight * 0.5) + 'px';
 			vidIframe.style.left = (window.innerWidth * 0.5 - vidIframe.offsetWidth * 0.5) + 'px';
 		}
+
+		var menuContent = document.querySelector('#menu');
+		menuContent.classList.add('no-anim');
+		menuContent.style.transform = 'translate3d(-'+window.innerWidth+'px,0,0)';
+		menuContent.style['-webkit-transform'] = 'translate3d(-'+window.innerWidth+'px,0,0)';
 	};
 
 	function browserHeight() {
