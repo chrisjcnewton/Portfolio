@@ -157,10 +157,14 @@
 			vidIframe.style.left = (window.innerWidth * 0.5 - vidIframe.offsetWidth * 0.5) + 'px';
 		}
 
-		var menuContent = document.querySelector('#menu');
-		menuContent.classList.add('no-anim');
-		menuContent.style.transform = 'translate3d(-'+window.innerWidth+'px,0,0)';
-		menuContent.style['-webkit-transform'] = 'translate3d(-'+window.innerWidth+'px,0,0)';
+		var darkBG = document.querySelector('.videoBg');
+		if(!darkBG){
+			var menuContent = document.querySelector('#menu');
+			menuContent.classList.add('no-anim');
+			menuContent.style.transform = 'translate3d(-'+window.innerWidth+'px,0,0)';
+			menuContent.style['-webkit-transform'] = 'translate3d(-'+window.innerWidth+'px,0,0)';
+		}
+
 	};
 
 	function browserHeight() {
