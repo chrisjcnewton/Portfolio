@@ -18,7 +18,50 @@ body{
 
 
 }
-.hamburger-menu{
+#hamburger-menu{
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    left: 12px;
+    /* background: red; */
+    width: 35px;
+    height: 4px;
+    padding: 10px 0;
+  cursor: pointer;
+}
+
+#hamburger-menu span, #hamburger-menu span:before, #hamburger-menu span:after {
+  border-radius: 6px;
+  height: 5px;
+  width: 35px;
+  background: #549AD3;
+  position: absolute;
+  display: block;
+  content: '';
+}
+#hamburger-menu span:before {
+  top: -10px;
+}
+#hamburger-menu span:after {
+  bottom: -10px; 
+}
+#hamburger-menu span, #hamburger-menu span:before, #hamburger-menu span:after {
+  transition: all 500ms ease-in-out;
+}
+#hamburger-menu.active span {
+  background-color: transparent;
+}
+#hamburger-menu.active span:before, #hamburger-menu.active span:after {
+  top: 0;
+}
+#hamburger-menu.active span:before {
+  transform: rotate(45deg);
+}
+#hamburger-menu.active span:after {
+  transform: rotate(-45deg);
+}
+
+/*.hamburger-menu{
 
     background-image:url('../images/hamburger.svg');
     width:30px;
@@ -26,16 +69,16 @@ body{
     cursor:pointer;
 		margin:10px 0 5px 10px;
 
-}
+}*/
 
-.close-menu{
+/*.close-menu{
 	background-image: url('data:image/png;base64,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');
 	width:52px;
 	height:52px;
 	position: absolute;
 	margin: 70px 0 0 10px;
 	background-size: contain;
-}
+}*/
 
 
 #menu{
@@ -328,10 +371,10 @@ a:hover{
 		padding-left:0.9em;
 
 	}
-	/*
-	.section, .bgImage{
-		border-radius: initial;
-	}*/
+	
+	.section{
+		box-shadow: none;
+	}
 
 	.contentMinor{
 		float:none;
