@@ -8,7 +8,7 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	line-height:1.4em;
 	background-color:#eeeeee;
-	overflow: hidden;
+	/*overflow: hidden;*/
 
 	-webkit-font-smoothing: antialiased;
 
