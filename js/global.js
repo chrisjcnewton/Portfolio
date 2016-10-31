@@ -13,7 +13,7 @@
 		clickEvent = isMobile ? 'touchend' : 'click';
 		var pageContents = document.getElementById('pageContents');
 
-		if (isMobile) {
+		// if (isMobile) {
 			var panels = document.querySelectorAll('.panel');
 			for (var i = 0; i < panels.length; i++) {
 				panels[i].style.opacity = '1';
@@ -23,11 +23,11 @@
 			pageContents.style.paddingRight = '0px';
 			/*pageContents.style.overflow = "scroll";
 			pageContents.style['-webkit-overflow-scrolling'] = "touch";*/
-		} else {
-			scroller = new CustomScroll(pageContents, { ease: true, thumbClass: 'scrollbar-thumb', trackClass: 'scrollbar-track' });
-			scroller.onScroll(onScrolling);
-			document.body.style.overflow = 'hidden';
-		}
+		// } else {
+		// 	scroller = new CustomScroll(pageContents, { ease: true, thumbClass: 'scrollbar-thumb', trackClass: 'scrollbar-track' });
+		// 	scroller.onScroll(onScrolling);
+		// 	document.body.style.overflow = 'hidden';
+		// }
 
 		var videos = document.querySelectorAll('.playvideo');
 		for (var i = 0; i < videos.length; i++) {
@@ -153,7 +153,7 @@
 
 	function onResize() {
 		if (isMobile) return;
-		scroller.update(browserHeight());
+		//scroller.update(browserHeight());
 		if (vidIframe) {
 			vidIframe.height = vidIframe.offsetWidth / 1.78;
 			vidIframe.style.top = (window.innerHeight * 0.5 - vidIframe.offsetHeight * 0.5) + 'px';
