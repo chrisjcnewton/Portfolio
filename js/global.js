@@ -26,6 +26,7 @@
 		} else {
 			scroller = new CustomScroll(pageContents, { ease: true, thumbClass: 'scrollbar-thumb', trackClass: 'scrollbar-track' });
 			scroller.onScroll(onScrolling);
+			document.body.style.overflow = 'hidden';
 		}
 
 		var videos = document.querySelectorAll('.playvideo');
@@ -39,7 +40,7 @@
 		var closeMenu = document.querySelector('.close-menu');
 		closeMenu.addEventListener(clickEvent, onCloseClicked, false);
 
-		onResize()
+		onResize();
 	}
 
 	function onMenuClicked() {
