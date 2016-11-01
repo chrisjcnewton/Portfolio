@@ -58,7 +58,7 @@ body{
   transform: rotate(45deg);
 }
 #hamburger-menu.active span:after {
-  transform: rotate(-45deg);
+  transform: rotate(-225deg);
 }
 
 /*.hamburger-menu{
