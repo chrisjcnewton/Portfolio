@@ -1,7 +1,7 @@
 (function () {
 
 
-	var scroller, clickEvent, vidIframe = null;
+	var scroller, clickEvent, hamburgerMenu, vidIframe = null;
 	var isMobile = navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile/i) != null;
 
 
@@ -34,11 +34,11 @@
 			videos[i].addEventListener(clickEvent, onPlayClicked, false);
 		}
 
-		var hamburgerMenu = document.querySelector('#hamburger-menu');
+		hamburgerMenu = document.querySelector('#hamburger-menu');
 		hamburgerMenu.addEventListener(clickEvent, onMenuClicked, false);
 
-		// var closeMenu = document.querySelector('.close-menu');
-		// closeMenu.addEventListener(clickEvent, onCloseClicked, false);
+		var menu = document.querySelector('#menu');
+		menu.addEventListener('transitionend', onMenuTransEnd, false);
 
 		onResize();
 	}
@@ -73,6 +73,7 @@
 		var projects = document.querySelector('#projects');
 		projects.style.transform = 'translate3d(0px,0,0px)';
 		projects.style['-webkit-transform'] = 'translate3d(0px,0,0px)';
+		projects.style.display = 'block';
 		//projects.style['-webkit-filter'] = "blur(2px)";
 
 		var menuContent = document.querySelector('#menu');
@@ -90,8 +91,20 @@
 
 	}
 
+	function onMenuTransEnd(e){
+		if(e.target.dataset.menuState === 'closed'){
+			e.target.dataset.menuState = 'open';
+			var projects = document.querySelector('#projects');
+			projects.style.display = 'none';
+		}else{
+			e.target.dataset.menuState = 'closed';
+		}		
+	}
+
 	function onPlayClicked(e) {
 		var vidBG = document.createElement('div');
+
+		hamburgerMenu.style.zIndex = '1';
 
 		vidBG.classList.add('videoBg');
 		document.body.appendChild(vidBG);
@@ -130,6 +143,7 @@
 			document.body.removeChild(vidBG);
 			vidIframe.src = null;
 			vidIframe = null;
+			hamburgerMenu.style.zIndex = '10';
 		}, false);
 	}
 
@@ -169,9 +183,10 @@
 			vidIframe.style.left = (window.innerWidth * 0.5 - vidIframe.offsetWidth * 0.5) + 'px';
 		}
 
-		var darkBG = document.querySelector('.videoBg');
-		if(!darkBG){
-			var menuContent = document.querySelector('#menu');
+		//var darkBG = document.querySelector('.videoBg');
+		var menuContent = document.querySelector('#menu');
+		
+		if(menuContent.dataset.menuState === 'closed'){			
 			menuContent.classList.add('no-anim');
 			menuContent.style.transform = 'translate3d(-'+window.innerWidth+'px,0,0)';
 			menuContent.style['-webkit-transform'] = 'translate3d(-'+window.innerWidth+'px,0,0)';
