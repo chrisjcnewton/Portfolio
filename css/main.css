@@ -15,6 +15,7 @@ body{
 	perspective: 1345px;
 	-webkit-perspective: 1345px;
 	-webkit-perspective-origin: 50% 0%;
+	
 
 
 }
@@ -204,7 +205,7 @@ a:hover{
 }
 
 .video{
-	position:fixed;
+	position:absolute;
 	padding: 17px;
 	background: #eeeeee;
 	border-radius: 7px;
@@ -212,6 +213,8 @@ a:hover{
 	opacity:0;
 	transition: opacity 1s ease-in-out;
 	-webkit-transition: opacity 1s ease-in-out;
+	backface-visibility: hidden;
+	transform:translateZ(0);
 }
 
 .videoBg{

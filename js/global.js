@@ -114,7 +114,8 @@
 		loader.style.position = 'absolute';
 		vidBG.appendChild(loader);
 		loader.onload = function () {
-			loader.style.top = (window.innerHeight * 0.5 - loader.offsetHeight * 0.5) + 'px';
+			
+			loader.style.top = (window.innerHeight * 0.5 - loader.offsetHeight * 0.5) + document.body.scrollTop + 'px';			
 			loader.style.left = (window.innerWidth * 0.5 - loader.offsetWidth * 0.5) + 'px';
 			vidBG.style.opacity = '1';
 		};
@@ -134,7 +135,7 @@
 			vidIframe.height = vidIframe.offsetWidth / 1.78;
 			//vidBG.style.visibility = "visible";
 			vidIframe.style.opacity = '1';
-			vidIframe.style.top = (window.innerHeight * 0.5 - vidIframe.offsetHeight * 0.5) + 'px';
+			vidIframe.style.top = (window.innerHeight * 0.5 - vidIframe.offsetHeight * 0.5) + document.body.scrollTop + 'px';
 			vidIframe.style.left = (window.innerWidth * 0.5 - vidIframe.offsetWidth * 0.5) + 'px';
 
 		};
