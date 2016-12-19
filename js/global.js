@@ -26,7 +26,7 @@
 		} else {
 			scroller = new CustomScroll(pageContents, { ease: true, thumbClass: 'scrollbar-thumb', trackClass: 'scrollbar-track' });
 			scroller.onScroll(onScrolling);
-			document.body.style.overflow = 'hidden';
+			//document.body.style.overflow = 'hidden';			
 		}
 
 		var videos = document.querySelectorAll('.playvideo');
