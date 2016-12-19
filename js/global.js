@@ -26,7 +26,9 @@
 		} else {
 			scroller = new CustomScroll(pageContents, { ease: true, thumbClass: 'scrollbar-thumb', trackClass: 'scrollbar-track' });
 			scroller.onScroll(onScrolling);
-			//document.body.style.overflow = 'hidden';			
+			document.body.style.overflow = 'hidden';
+			//pageContents.style.overflow = 'hidden';
+			
 		}
 
 		var videos = document.querySelectorAll('.playvideo');
@@ -75,6 +77,8 @@
 		projects.style['-webkit-transform'] = 'translate3d(0px,0,0px)';
 		projects.style.display = 'block';
 		//projects.style['-webkit-filter'] = "blur(2px)";
+		window.scrollTo(0,0);
+		scroller.gotoYPos(0);
 
 		var menuContent = document.querySelector('#menu');
 		menuContent.style.transform = 'translate3d(-'+window.innerWidth+'px,0,0)';
@@ -96,7 +100,9 @@
 			e.target.dataset.menuState = 'open';
 			var projects = document.querySelector('#projects');
 			projects.style.display = 'none';
+			document.body.style.overflow = 'auto';
 		}else{
+			document.body.style.overflow = 'hidden';
 			e.target.dataset.menuState = 'closed';
 		}		
 	}
