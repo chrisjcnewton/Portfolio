@@ -24,11 +24,15 @@
 			/*pageContents.style.overflow = "scroll";
 			pageContents.style['-webkit-overflow-scrolling'] = "touch";*/
 		} else {
-			scroller = new CustomScroll(pageContents, { ease: true, thumbClass: 'scrollbar-thumb', trackClass: 'scrollbar-track' });
+			scroller = new CustomScroll(pageContents, {
+				ease: true,
+				thumbClass: 'scrollbar-thumb',
+				trackClass: 'scrollbar-track'
+			});
 			scroller.onScroll(onScrolling);
 			document.body.style.overflow = 'hidden';
 			//pageContents.style.overflow = 'hidden';
-			
+
 		}
 
 		var videos = document.querySelectorAll('.playvideo');
@@ -47,26 +51,28 @@
 
 	function onMenuClicked(e) {
 		var menu = e.currentTarget;
-		if(menu.classList.contains( 'active' )){
-			menu.classList.remove( 'active' );
+		if (menu.classList.contains('active')) {
+			menu.classList.remove('active');
 			onCloseClicked();
-		}else{
-			menu.classList.add( 'active' );
-		//e.currentTarget.classList.toggle( 'active' );
+		} else {
+			menu.classList.add('active');
+			//e.currentTarget.classList.toggle( 'active' );
 			var projects = document.querySelector('#projects');
 			projects.style.transform = 'translate3d(0px,0,-200px)';
 			projects.style['-webkit-transform'] = 'translate3d(0px,0,-200px)';
 			//projects.style['-webkit-filter'] = "blur(2px)";
 
-			var menuContent = document.querySelector('#menu');		
-			menuContent.classList.remove('no-anim');		
+			var menuContent = document.querySelector('#menu');
+			menuContent.classList.remove('no-anim');
 			menuContent.style.transform = 'translate3d(0,0,0)';
 			menuContent.style['-webkit-transform'] = 'translate3d(0px,0,0)';
 
 			var darkBG = document.createElement('div');
 			darkBG.setAttribute('class', 'videoBg');
 			document.body.insertBefore(darkBG, projects);
-			setTimeout(function () { darkBG.style.opacity = '1'; }, 100);
+			setTimeout(function () {
+				darkBG.style.opacity = '1';
+			}, 100);
 		}
 
 	}
@@ -77,13 +83,15 @@
 		projects.style['-webkit-transform'] = 'translate3d(0px,0,0px)';
 		projects.style.display = 'block';
 		//projects.style['-webkit-filter'] = "blur(2px)";
-		window.scrollTo(0,0);
-		scroller.gotoYPos(0);
+		if (!isMobile) {
+			window.scrollTo(0, 0);
+			scroller.gotoYPos(0);
+		}
 
 		var menuContent = document.querySelector('#menu');
-		menuContent.style.transform = 'translate3d(-'+window.innerWidth+'px,0,0)';
-		menuContent.style['-webkit-transform'] = 'translate3d(-'+window.innerWidth+'px,0,0)';
-		
+		menuContent.style.transform = 'translate3d(-' + window.innerWidth + 'px,0,0)';
+		menuContent.style['-webkit-transform'] = 'translate3d(-' + window.innerWidth + 'px,0,0)';
+
 
 		var darkBG = document.querySelector('.videoBg');
 
@@ -95,16 +103,16 @@
 
 	}
 
-	function onMenuTransEnd(e){
-		if(e.target.dataset.menuState === 'closed'){
+	function onMenuTransEnd(e) {
+		if (e.target.dataset.menuState === 'closed') {
 			e.target.dataset.menuState = 'open';
 			var projects = document.querySelector('#projects');
 			projects.style.display = 'none';
-			document.body.style.overflow = 'auto';
-		}else{
-			document.body.style.overflow = 'hidden';
+			if (!isMobile) document.body.style.overflow = 'scroll';
+		} else {
+			if (!isMobile) document.body.style.overflow = 'hidden';
 			e.target.dataset.menuState = 'closed';
-		}		
+		}
 	}
 
 	function onPlayClicked(e) {
@@ -120,8 +128,8 @@
 		loader.style.position = 'absolute';
 		vidBG.appendChild(loader);
 		loader.onload = function () {
-			
-			loader.style.top = (window.innerHeight * 0.5 - loader.offsetHeight * 0.5) + document.body.scrollTop + 'px';			
+
+			loader.style.top = (window.innerHeight * 0.5 - loader.offsetHeight * 0.5) + document.body.scrollTop + 'px';
 			loader.style.left = (window.innerWidth * 0.5 - loader.offsetWidth * 0.5) + 'px';
 			vidBG.style.opacity = '1';
 		};
@@ -192,11 +200,11 @@
 
 		//var darkBG = document.querySelector('.videoBg');
 		var menuContent = document.querySelector('#menu');
-		
-		if(menuContent.dataset.menuState === 'closed'){			
+
+		if (menuContent.dataset.menuState === 'closed') {
 			menuContent.classList.add('no-anim');
-			menuContent.style.transform = 'translate3d(-'+window.innerWidth+'px,0,0)';
-			menuContent.style['-webkit-transform'] = 'translate3d(-'+window.innerWidth+'px,0,0)';
+			menuContent.style.transform = 'translate3d(-' + window.innerWidth + 'px,0,0)';
+			menuContent.style['-webkit-transform'] = 'translate3d(-' + window.innerWidth + 'px,0,0)';
 		}
 
 	};
